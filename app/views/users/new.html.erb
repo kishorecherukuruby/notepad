@@ -1,0 +1,35 @@
+<%= form_tag('/users/create') do %>
+	<p>
+		<%= label_tag 'firstname' %>
+		<%= text_field_tag 'fname' %>
+	</p>
+	<p>
+		<%= label_tag 'lastname' %>
+		<%= text_field_tag 'lname' %>
+	</p>
+	<p>
+		<%= label_tag 'DOB' %>
+		<%= date_field_tag 'dob' %>
+	</p>
+	<p>
+		<%= label_tag 'gender' %>
+		<%= radio_button_tag 'gender', 'male'%> Male
+		<%= radio_button_tag 'gender', 'female' %> Female
+	</p>
+	<p>
+		<%= label_tag 'hobbies' %><br/>
+		<%= check_box_tag 'rock[]', 'cricket' %> Cricket
+		<%= check_box_tag 'rock[]', 'hocky' %> Hocky
+		<%= check_box_tag 'rock[]', 'football' %> football
+		<%= check_box_tag 'rock[]', 'vollyball' %> volly ball
+	</p>
+	<p>
+		<%= label_tag "qualification" %>
+		<%= select_tag "qualification", "<option>MCA</option><option>Btech</option><option>B.com</option>".html_safe , include_blank: true%> 	
+	</p>
+	<p>
+		<%= submit_tag %>
+	</p>
+<% end %>
+
+<%= @data %>

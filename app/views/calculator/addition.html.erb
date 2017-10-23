@@ -1,0 +1,11 @@
+<%= form_tag do %>
+
+<p>Enter A value : <%= number_field_tag 'a', nil, in: 1...10, step: 2 %></p>
+<p>Enter B value : <%= number_field_tag 'b' , nil, in: 1...10%></p>
+<p><%= submit_tag "Addition" %></p>
+
+<% end %>
+
+<% if @a != nil %>
+	<h1>Addition : <%= @a + @b %> </h1>
+<% end %>
