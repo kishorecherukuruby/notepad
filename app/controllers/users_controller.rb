@@ -5,6 +5,12 @@ class UsersController < ApplicationController
 
   def create
   	#byebug
+
+    @user = User.new(fname: params[:fname],lname: params[:lname],
+            :dob => params[:dob], gender: params[:gender],
+            :hobbies => params[:rock],qualification: params[:qualification])
+    @user.save
+
   	@fullname = params[:fname] + params[:lname]
     @age = calculate_age(params[:dob])
   	@hobbies = params[:rock].join(",") if params[:rock]
